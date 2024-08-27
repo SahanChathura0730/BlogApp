@@ -18,9 +18,9 @@ function App() {
          <Routes>
           <Route exact path='/' element={<HomePage/>} />
           <Route path='/singlePage' element={user ? <SinglePage/> : <LoginPage/>} />
-          <Route path='/write' element={user ? <Write/> : <LoginPage/>} />
-          <Route path='/settingPage/:postID' element={user ? <SettingPage/> : <LoginPage/>} />
-          <Route path='/loginPage' element={user ? <LoginPage/>: <RegisterPage/>} />
+          <Route path='/write' element={<Write/>} />
+          <Route path='/settingPage' element={<SettingPage/>} />
+          <Route path='/loginPage' element={<LoginPage/>} />
           <Route path='/registerPage' element={<RegisterPage/>} />
          </Routes>
       </Router>

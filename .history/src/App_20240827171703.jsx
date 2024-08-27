@@ -19,7 +19,7 @@ function App() {
           <Route exact path='/' element={<HomePage/>} />
           <Route path='/singlePage' element={user ? <SinglePage/> : <LoginPage/>} />
           <Route path='/write' element={user ? <Write/> : <LoginPage/>} />
-          <Route path='/settingPage/:postID' element={user ? <SettingPage/> : <LoginPage/>} />
+          <Route path='/settingPage' element={user ? <SettingPage/> : <LoginPage/>} />
           <Route path='/loginPage' element={user ? <LoginPage/>: <RegisterPage/>} />
           <Route path='/registerPage' element={<RegisterPage/>} />
          </Routes>

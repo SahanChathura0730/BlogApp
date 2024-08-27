@@ -40,12 +40,12 @@ export default function TopBar() {
         ) : (
           <ul className="topList">
             <li className="topListItem">
-              <Link className="link" to="/loginPage">
+              <Link className="link" to="/login">
                 LOGIN
               </Link>
             </li>
             <li className="topListItem">
-              <Link className="link" to="/registerPage">
+              <Link className="link" to="/register">
                 REGISTER
               </Link>
             </li>
