@@ -7,7 +7,7 @@ import SinglePage from './pages/singlePage/SinglePage'
 import Write from './pages/write/Write';
 import SettingPage from './pages/settingPage/SettingPage';
 import LoginPage from './pages/loginPage/LoginPage';
-import RegisterPage from './pages/registerPage/RegisterPage';
+import Register from './pages/registerPage/RegisterPage';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         {/* <SinglePage /> */}
         {/* <Write /> */}
         {/* <SettingPage /> */}
-          <RegisterPage />
+          <Register />
       </Router>
     </>
   )
