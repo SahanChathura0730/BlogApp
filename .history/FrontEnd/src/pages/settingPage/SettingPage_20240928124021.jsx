@@ -53,7 +53,7 @@ export default function Settings() {
           <label>Profile Picture</label>
           <div className="settingsPP">
             <img
-              src={file ? URL.createObjectURL(file) : user.profilePic}
+              src={user.profilePic}
               alt=""
             />
             <label htmlFor="fileInput">

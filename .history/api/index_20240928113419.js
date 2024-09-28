@@ -21,8 +21,11 @@ app.use(cors({
  }));
  
 
-mongoose.connect(process.env.MONGO_URL, {}).then(console.log("Connected to MongoDB"))
-  .catch((err) => console.log(err));
+ mongoose.connect(process.env.MONGO_URL)
+ .then(() => console.log("Connected to MongoDB"))
+ .catch((err) => console.log(err));
+
+ 
 
 const storage =multer.diskStorage({
    destination: (req, file, cb) =>{

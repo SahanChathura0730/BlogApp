@@ -10,37 +10,31 @@ export default function Settings() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const {user} = useContext(Context);
-  const [success, setSuccess] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const updatedUser = {
-       userId: user._id,
-       username,
-       email,
-       password,
+      userId: user._id,
+      username,
+      email,
+      password,
     };
     if (file) {
-       const data = new FormData();
-       const filename = Date.now() + file.name;
-       data.append("name", filename);
-       data.append("file", file);
-       updatedUser.profilePic = filename;
-       try {
-          await axios.post("api/upload", data);
-       } catch (err) {
-          console.error("Error uploading file:", err);
-       }
+      const data = new FormData();
+      const filename = Date.now() + file.name;
+      data.append("name", filename);
+      data.append("file", file);
+      updatedUser.profilePic = filename;
+      try {
+        await axios.post("api/upload", data);
+      } catch (err) {}
     }
     try {
-       const res = await axios.put("api/users/" + user._id, updatedUser);
-       setSuccess(true);
+      const res = await axios.put("api/users/" + user._id, updatedUser);
     } catch (err) {
-       console.error("Error updating user:", err);
-       setSuccess(false);
+
     }
- };
- 
+  };
   
   return (
     <div className="settings">
@@ -53,7 +47,7 @@ export default function Settings() {
           <label>Profile Picture</label>
           <div className="settingsPP">
             <img
-              src={file ? URL.createObjectURL(file) : user.profilePic}
+              src={user.profilePic}
               alt=""
             />
             <label htmlFor="fileInput">
@@ -76,13 +70,6 @@ export default function Settings() {
           <button className="settingsSubmitButton" type="submit">
             Update
           </button>
-          {success && (
-            <span
-              style={{ color: "green", textAlign: "center", marginTop: "20px" }}
-            >
-              Profile has been updated...
-            </span>
-          )}
         </form>
       </div>
       <Sidebar />

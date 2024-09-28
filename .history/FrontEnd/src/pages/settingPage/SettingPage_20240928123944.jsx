@@ -10,7 +10,7 @@ export default function Settings() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const {user} = useContext(Context);
-  const [success, setSuccess] = useState(false)
+  const [success, setSuccess] = useState("false")
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,7 +53,7 @@ export default function Settings() {
           <label>Profile Picture</label>
           <div className="settingsPP">
             <img
-              src={file ? URL.createObjectURL(file) : user.profilePic}
+              src={user.profilePic}
               alt=""
             />
             <label htmlFor="fileInput">

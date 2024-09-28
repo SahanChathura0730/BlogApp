@@ -23,6 +23,8 @@ router.put("/:id", async(req,res) => {
       }
    }else{
       res.status(401).json("You can update only your account!");
+      console.log(req.body.userID);
+      console.log(req.params.id);
    }
 });
 
